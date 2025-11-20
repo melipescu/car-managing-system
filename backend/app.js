@@ -18,6 +18,7 @@ async function main() {
 //     })
 
 const carSchema = new mongoose.Schema({
+    carName: String,
     numarInmatriculare: String,//date - is string ok?, is property name ok as camelCase?
     sasiu: Number,//numbers and letters
     leasingFile: Number,
@@ -27,8 +28,14 @@ const carSchema = new mongoose.Schema({
     casco: String,
     itp: String,
     rovinieta: String,
-
 });
+
+const Car = mongoose.model('Car', carSchema);
+
+const hyundai = new Car({ carName: 'HyundaiI30' });
+console.log(hyundai.carName);
+
+module.exports = mongoose.model('Car', CarSchema);
 
 const app = express();
 
