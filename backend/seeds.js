@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Car = require('./car');
+const Car = require('./cars');
 
 main().catch(err => console.log(err));
 
