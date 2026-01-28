@@ -21,9 +21,17 @@ mongoose.connect('mongodb://127.0.0.1:27017/test')
         console.log(err)
     })
 
-app.get('/car', (req, res) => {
+app.get('/cars', (req, res) => {
     res.send('Brrrruumm!')
 })
+
+// fetch();
+
+const abc = fetch('http://localhost:3000/cars')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
 
 //or 
 // *another way of connecting to mongodb
